@@ -1,0 +1,453 @@
+﻿<html xmlns:tp="http://schemas.datacontract.org/2004/07/Microsoft.VisualStudio.TestPlatform.Extensions.HtmlLogger.ObjectModel" xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <body>
+    <h1>Test run details</h1>
+    <div class="summary">
+      <div class="block"><span>Total tests</span><div class="total-tests">14</div><br></div>
+      <div class="block"><span>Passed  : </span><span class="passedTests">12</span><br><span>Failed  : </span><span class="failedTests">2</span><br><span>Skipped : </span><span class="skippedTests">0</span><br></div>
+      <div class="block"><span>Pass percentage</span><div class="pass-percentage">85 %</div><br></div>
+      <div class="block"><span>Run duration</span><div class="test-run-time">4s 659ms</div><br></div><br></div>
+    <h2>Failed Results</h2>
+    <div class="list-row" onclick="ToggleClass('1083534908-failedResult')">F:\Automation\rest-api-framework\TestApiProject\TestApiProject\bin\Debug\net6.0\VerivoxTestApiProject.dll</div>
+    <div class="inner-row" Id="1083534908-failedResult" style="display:block;">
+      <div class="leaf-division">
+        <div><span class="fail">✘</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","77716","Fischerbach, Haslach im Kinzigtal, Hofstetten","200",null)​</span><div class="duration"><span>163ms</span><br></div>
+        </div>
+        <div class="error-info">
+    Error: <span class="error-message"><pre>Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 70
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.ScenarioCleanup()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.FindTheCitiesForAGivenPostcode(String endpoint, String postcode, String cityList, String httpStatus, String[] exampleTags) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\Features\AddressChecker.Feature:line 14
+
+1)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+2)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+</pre></span><br></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="fail">✘</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","99974","M�hlhausen, Unstruttal","200",null)​</span><div class="duration"><span>184ms</span><br></div>
+        </div>
+        <div class="error-info">
+    Error: <span class="error-message"><pre>Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 70
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.ScenarioCleanup()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.FindTheCitiesForAGivenPostcode(String endpoint, String postcode, String cityList, String httpStatus, String[] exampleTags) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\Features\AddressChecker.Feature:line 14
+
+1)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+2)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+</pre></span><br></div>
+      </div>
+    </div>
+    <h2>All Results</h2>
+    <div class="list-row" onclick="ToggleClass('1083534908')">F:\Automation\rest-api-framework\TestApiProject\TestApiProject\bin\Debug\net6.0\VerivoxTestApiProject.dll</div>
+    <div class="inner-row" Id="1083534908" style="display:none;">
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","10409","Berlin","200",null)​</span><div class="duration"><span>357ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="fail">✘</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","77716","Fischerbach, Haslach im Kinzigtal, Hofstetten","200",null)​</span><div class="duration"><span>163ms</span><br></div>
+        </div>
+        <div class="error-info">
+    Error: <span class="error-message"><pre>Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 70
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.ScenarioCleanup()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.FindTheCitiesForAGivenPostcode(String endpoint, String postcode, String cityList, String httpStatus, String[] exampleTags) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\Features\AddressChecker.Feature:line 14
+
+1)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+2)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+</pre></span><br></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="fail">✘</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","99974","M�hlhausen, Unstruttal","200",null)​</span><div class="duration"><span>184ms</span><br></div>
+        </div>
+        <div class="error-info">
+    Error: <span class="error-message"><pre>Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 70
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.ScenarioCleanup()
+   at VerivoxTestApiProject.Features.FindTheCitiesAndStreetsForAGivenPostcodeFeature.FindTheCitiesForAGivenPostcode(String endpoint, String postcode, String cityList, String httpStatus, String[] exampleTags) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\Features\AddressChecker.Feature:line 14
+
+1)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+2)    at VerivoxTestApiProject.StepDefinitions.AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith(String expectedCitylists) in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\StepDefinitions\AddressCheckerStepDefinitions.cs:line 65
+
+</pre></span><br></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","22333","","404",null)​</span><div class="duration"><span>135ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/INVALID/cities","10585","","404",null)​</span><div class="duration"><span>119ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","117863","","404",null)​</span><div class="duration"><span>129ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","0","","404",null)​</span><div class="duration"><span>125ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheCitiesForAGivenPostcode("/geo/latestv2/cities","NE3$12","","404",null)​</span><div class="duration"><span>129ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","10409","Berlin","29","200",null)​</span><div class="duration"><span>161ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","77716","Fischerbach","34","200",null)​</span><div class="duration"><span>167ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","77716","Haslach","121","200",null)​</span><div class="duration"><span>138ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","77716","Hofstetten","40","200",null)​</span><div class="duration"><span>156ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","10585","Stuttgart","0","404",null)​</span><div class="duration"><span>122ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+      <div class="leaf-division">
+        <div><span class="pass">✔</span><span> FindTheStreetsForAGivenPostcodeAndCity("/geo/latestv2/cities","Berlin","10409","0","404",null)​</span><div class="duration"><span>152ms</span><br></div>
+        </div>
+        <div class="error-info"></div>
+      </div>
+    </div>
+    <div>
+      <h2>Informational messages</h2><span>NUnit Adapter 4.5.0.0: Test execution started</span><br><span>Running all tests in F:\Automation\rest-api-framework\TestApiProject\TestApiProject\bin\Debug\net6.0\VerivoxTestApiProject.dll</span><br><span>   NUnit3TestExecutor discovered 14 of 14 NUnit test cases using Current Discovery mode, Non-Explicit run</span><br><span>NUnit Adapter 4.5.0.0: Test execution complete</span><br></div>
+    <div>
+      <h2>Error and Warning messages</h2><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.1s)
+When I request the cities for postcode "10409"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""10409"") (0.2s)
+Then I should receive a response with "Berlin"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("Berlin") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 200 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(200) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "77716"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""77716"") (0.1s)
+Then I should receive a response with "Fischerbach, Haslach im Kinzigtal, Hofstetten"
+-&gt; error: Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "Fischerbach", "Haslach im Kinzigtal", "Hofstetten" &gt;
+  But was:  &lt; "Fischerbach", "Haslach", "Hofstetten" &gt;
+  Missing (1): &lt; "Haslach im Kinzigtal" &gt;
+  Extra (1): &lt; "Haslach" &gt;
+
+ (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; skipped because of previous errors
+And The response 200 status code should match
+-&gt; skipped because of previous errors
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "99974"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""99974"") (0.2s)
+Then I should receive a response with "M�hlhausen, Unstruttal"
+-&gt; error: Multiple failures or warnings in test:
+  1)   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+  2) Error while validating the actual and expected list of city/cities!   The City List in service response do not match with the expected result!
+  Expected: equivalent to &lt; "M�hlhausen", "Unstruttal" &gt;
+  But was:  &lt; "Mühlhausen" &gt;
+  Missing (2): &lt; "M�hlhausen", "Unstruttal" &gt;
+  Extra (1): &lt; "Mühlhausen" &gt;
+
+ (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; skipped because of previous errors
+And The response 200 status code should match
+-&gt; skipped because of previous errors
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "22333"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""22333"") (0.1s)
+Then I should receive a response with ""
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/INVALID/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/INVALID/cities") (0.0s)
+When I request the cities for postcode "10585"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""10585"") (0.1s)
+Then I should receive a response with ""
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "117863"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""117863"") (0.1s)
+Then I should receive a response with ""
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "0"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""0"") (0.1s)
+Then I should receive a response with ""
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the cities for postcode "NE3$12"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheCitiesForPostcode(""NE3$12"") (0.1s)
+Then I should receive a response with ""
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWith("") (0.0s)
+And No JSON data is returned for HTTP error status
+-&gt; done: AddressCheckerStepDefinitions.ThenNoJSONDataIsReturnedForHTTPErrorStatus() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "Berlin" with postcode "10409"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("Berlin", "10409") (0.1s)
+Then I should receive a response with a list of streets for "Berlin"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("Berlin") (0.0s)
+And The response should contain 29 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(29) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 200 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(200) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "Fischerbach" with postcode "77716"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("Fischerbach", "77716") (0.2s)
+Then I should receive a response with a list of streets for "Fischerbach"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("Fischerbach") (0.0s)
+And The response should contain 34 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(34) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 200 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(200) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "Haslach" with postcode "77716"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("Haslach", "77716") (0.1s)
+Then I should receive a response with a list of streets for "Haslach"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("Haslach") (0.0s)
+And The response should contain 121 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(121) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 200 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(200) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "Hofstetten" with postcode "77716"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("Hofstetten", "77716") (0.2s)
+Then I should receive a response with a list of streets for "Hofstetten"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("Hofstetten") (0.0s)
+And The response should contain 40 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(40) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 200 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(200) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "Stuttgart" with postcode "10585"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("Stuttgart", "10585") (0.1s)
+Then I should receive a response with a list of streets for "Stuttgart"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("Stuttgart") (0.0s)
+And The response should contain 0 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(0) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br><span>Given the address checking service endpoint: "/geo/latestv2/cities"
+-&gt; done: AddressCheckerStepDefinitions.GivenTheAddressCheckingServiceEndpoint("/geo/latestv2/cities") (0.0s)
+When I request the streets for "10409" with postcode "Berlin"
+-&gt; done: AddressCheckerStepDefinitions.WhenIRequestTheStreetsForWithPostcode("10409", "Berlin") (0.1s)
+Then I should receive a response with a list of streets for "10409"
+-&gt; done: AddressCheckerStepDefinitions.ThenIShouldReceiveAResponseWithAListOfStreetsFor("10409") (0.0s)
+And The response should contain 0 streets
+-&gt; done: AddressCheckerStepDefinitions.ThenTheResponseShouldContainStreets(0) (0.0s)
+And The street names with special characters and dashes displayed correctly
+-&gt; done: AddressCheckerStepDefinitions.ThenTheStreetNamesWithSpecialCharactersAndDashesDisplayedCorrectly() (0.0s)
+And The response 404 status code should match
+-&gt; done: AddressCheckerStepDefinitions.ThenTheHTTPStatusCodeShouldMatch(404) (0.0s)
+</span><br></div>
+  </body><script language="javascript">
+        function ToggleClass(id) {
+        var elem = document.getElementById(id);
+        if (elem.style.display == "none") {
+        elem.style.display = "block";
+        }
+        else {
+        elem.style.display = "none";
+        }
+        }
+      </script><style>
+        body { font-family: Calibri, Verdana, Arial, sans-serif; background-color: White; color: Black; }
+        h2 {
+        margin-top: 15px;
+        margin-bottom:10px;
+        }
+        pre {
+        white-space: pre-wrap;
+        }
+        .summary {font-family:monospace;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .row {
+        border: 2px solid #ffffff;
+        width:100%;
+        cursor:pointer;
+        background-color:#d7e9fa;
+        }
+        .list-row {
+        border: 2px solid #ffffff;
+        width:100%;
+        cursor:pointer;
+        background-color:#ffffff;
+        }
+        .inner-row{
+        border: 2px solid #ffffff;
+        padding-left:1%;
+        margin-left:1%;
+        background-color:#ffffff;
+        }
+        .block{
+        width : 150px;
+        }
+        .leaf-division{
+        border: 2px solid #ffffff;
+        background-color:#e6eff7;
+        }
+        .pass { color: #0c0; }
+        .fail { color: #c00; }
+        .error-message { color : brown; }
+        .error-stack-trace { color: brown; }
+        .duration {float:right;padding-right:1%;}
+        .total-tests { font-size : 30px}
+        .test-run-time { font-size : 30px}
+        .pass-percentage { font-size : 30px}
+        .error-info{
+        margin-left:16px;
+        }
+      </style>
+</html>
