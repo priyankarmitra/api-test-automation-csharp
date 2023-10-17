@@ -35,7 +35,7 @@ VerivoxTestApiProject/
 
 Before getting started, make sure you have the following prerequisites installed:
 
-- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have 
+- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have used **Framework: .NET 6.0.23**
 - **Cucumber for .NET (SpecFlow)**: Install SpecFlow to write and execute Gherkin-based scenarios.
 
 I have used Visual Studio 2022 IDE to develop the code in C#
