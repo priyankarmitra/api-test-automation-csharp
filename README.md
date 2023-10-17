@@ -102,6 +102,7 @@ The reason 2  test cases will fail is because of 2 known Defects:
  ### Defect 1:
  
  Some city names with spaces and '/' do not appear in the response correctly, only the first word is shown, causing truncation.
+
  Ex: *77716, Haslach im Kinzigtal* and *99974 Mühlhausen/Thüringen*
 
  **Steps To Reproduce**
@@ -116,6 +117,7 @@ The reason 2  test cases will fail is because of 2 known Defects:
  ### Defect 2:
  
  Some postcodes return only one city, but the expectation is to retrieve multiple cities.
+ 
  Ex: 
 *Sollstedter Weg 1B, 99974 Unstruttal* and *Güldene Ecke 6, 99974 Mühlhausen/Thüringen*
 
