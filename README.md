@@ -28,14 +28,14 @@ VerivoxTestApiProject/
 │
 ├── Readme.md								# Project Notes & Documentation
 │
-└── ImplicitUsings.cs						# Declaring the usings implicitly
+└── ImplicitUsings.cs						# Declaring the usings libraries globally (Net 6.0+ support)
 ```
 
 ## Prerequisites
 
 Before getting started, make sure you have the following prerequisites installed:
 
-- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have used **Framework: .NET 6.0.23**
+- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have used **Framework: .NET 6.0.23** which supports ImplicitUsings.
 - **Cucumber for .NET (SpecFlow)**: Install SpecFlow to write and execute Gherkin-based scenarios.
 
 I have used Visual Studio 2022 IDE to develop the code in C#
