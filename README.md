@@ -173,3 +173,10 @@ Here's an example of a Gherkin feature file and its corresponding step definitio
 	}
 ```
 
+## Sample CMD Execution
+![image](https://github.com/priyankarmitra/api-test-automation-csharp/assets/54986023/9f8abf5c-fab5-4c3c-af09-bca70159452b)
+
+
+## Sample Test Report
+![image](https://github.com/priyankarmitra/api-test-automation-csharp/assets/54986023/211fc8db-d235-4b81-9100-9e830b710875)
+
