@@ -1,148 +1,96 @@
-# Test REST API Services using Ruby, Cucumber (Gherkin), and Generate HTML Reports
+# Test REST API Services using C#, SpecFlow (Gherkin), NUnit and Generate HTML Reports
 
-This repository provides a framework and example code for testing RESTful API services using Ruby, Rspec and Cucumber (Gherkin). 
+This repository provides a framework and example code for testing RESTful API services using C#, NUnit and SpecFlow (Gherkin). 
 The tests are designed to ensure the functionality of REST APIs and generate HTML reports to provide clear and organized test results.
-
 
 ### Project Structure
 
 ```
-test-verivox-api-framework/
+VerivoxTestApiProject/
 │
-├── lib/
-│   ├── fixtures/
-│   │   └── test_data.rb               # Static Test Data for testing
-│   │ 
-│   └── helpers/
-│   │   └── common.rb                  # Initiate common libs and classes 
-│   │ 
-│   └── modules/
-│   │   └── http_request.rb            # API Modules and class
-│   │ 
-├── features/
-│   ├── step_definitions/
-│   │   └── address_checker_steps.rb   # Step Definitions for Address Checker API
-│   │
-│   └── address_checker.feature        # Test scenarios to find the cities and streets for a given postcode
+├── Features
+│   └── AddressChecker.feature				# Test scenarios to find the cities and streets for a given postcode
 │
-├── config/
-│   └── cucumber.yaml            # Load necessary dependencies and configure HTTParty
+├── Services
+│   └── ApiServices.cs						# API Service class
 │
-├── Gemfile                      # Define project dependencies that will be installed when you run bundle install
-├── README.md                    # Project Notes & Documentation
+├── StepDefinitions
+│   └── AddressCheckerStepDefinitions.cs	# Step Definitions for Address Checker API
 │
-└──
+├── Support
+│   └── JsonBuilder.cs					    # Class to perform Json operations
+│
+├── TestData
+│   └── TestData.cs							# Static Test Data for testing
+│
+├── TestResults
+│   └── File6.txt
+│
+├── Readme.md								# Project Notes & Documentation
+│
+└── ImplicitUsings.cs						# Declaring the usings implicitly
 ```
-
-
 
 ## Prerequisites
 
 Before getting started, make sure you have the following prerequisites installed:
-https://www.ruby-lang.org/en/documentation/installation/
 
- Verify your ruby version in your system , if ruby is setup we can go straight to `Installing Depencies` section
-    ```
-    ruby -v
-    ```
+- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have used **Framework: .NET 6.0.23**
+- **Cucumber for .NET (SpecFlow)**: Install SpecFlow to write and execute Gherkin-based scenarios.
 
-### Mac:
-  
-  If the system version is 3.0.0 we are good. If it is below that please follow the below steps:
-  ```
-  brew install rbenv
-  rbenv init
-  rbenv install 3.0.0
-  rbenv global 3.0.0
-  ruby -v
-  ```
+I have used Visual Studio 2022 IDE to develop the code in C#
 
-  The output should be something like this:
+## Getting Started
 
-  ```
-  ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [arm64-darwin21]
-  ```
+### 1. Open the project
 
-  We also need to update your **~/.bash_profile** and add the following lines:
+### 2. Build the project to ensure all necessary dependencies are downloaded. 
+    
+	From Command line:
 
-  ```
-  export PATH=$PATH:/usr/local/bin
-  eval "$(rbenv init - zsh)"
-  export PATH=/opt/homebrew/Cellar:$PATH
-  ```
+	```
+	dotnet build VerivoxTestApiProject.sln
+	```
 
-  Execute the bash profile and restart terminal to see if you still have the changes!
-  
-### Windows:
+### 3. Install the following packages in the project directory. 
+    
+	You can also use the .NET CLI to restore NuGet packages like `dotnet restore`
+ 
+	```
+	> FluentAssertions                   6.2.0       6.2.0
+	> Microsoft.NET.Test.Sdk             17.0.0      17.0.0
+	> nunit                              3.13.2      3.13.2
+	> NUnit.Console                      3.16.3      3.16.3
+	> NUnit3TestAdapter                  4.5.0       4.5.0
+	> ReportGenerator                    5.1.26      5.1.26
+	> RestSharp                          110.2.0     110.2.0
+	> Shouldly                           4.2.1       4.2.1
+	> SpecFlow.NUnit                     3.9.40      3.9.40
+	> SpecFlow.Plus.LivingDocPlugin      3.9.57      3.9.57
+	```
 
-  Download Ruby devkit and follow the installation instruction https://rubyinstaller.org/downloads/
+ ### 4. Run your tests using the test runner in your IDE or by executing one of the following commands in *Command prompt / Terminal* as per your requirement:
 
-  Open new CMD, then run `ruby -v`
+	```
+	dotnet test
+	
+	
+	or
+	
+	dotnet test VerivoxTestApiProject.csproj --filter Category=automated
+	
+	or
+	
+	dotnet test VerivoxTestApiProject.csproj --filter Category=scenario1
+	```
+### 5. Generate HTML report using the following command
 
-  The output should be something like this:
+	```
+	dotnet test <pathToProjectDll>\VerivoxTestApiProject.dll --logger html
+	```
 
-  ```
-  ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x64-mingw-ucrt]
-  ```
+*The reports are generated in the **TestResults** directory*
 
-
-## Install Dependencies
-
-Open new Terminal / command prompt and run the following commands on the project directory:
-
-  ```
-  gem install bundler
-  bundle install
-  ```
-
-  This should install all the Ruby gems / dependencies.
-  Or you can separately install them:
-
-  ```
-  gem 'cucumber'
-  gem 'httparty'
-  gem 'json-schema'
-  gem 'minitest', '~> 5.20'
-  ```
-  Now, we should be good to start execution Localy.
-
-## Test Execution
-
-Open CMD / Terminal and navigate to the project directory
-
-### Specification Execution
-
-  ### Default
-
-  ```
-  bundle exec cucumber
-  ```
-
-  ### Execution of tests with tags:
-  ```
-  cucumber <folder_name>/<file_name> -t @tagName
-  ```
-  *Example:* cucumber features/address_checker.feature -t @scenario1
-
-  ### Execution of feature:
-  ```
-  cucumber <folder_name>/<file_name>
-  ```
-  *Example:*  cucumber features/address_checker.feature
-
-## HTML Reporting:
-
-The reports are **dynamic and are generated in Cucumber Cloud** when you run your test, you the dynamic cucumber link in web browser
-
-
-**Example:**
-```
-View your Cucumber Report at:                                            
-│ https://reports.cucumber.io/reports/8d57a795-911d-403c-ac01-92b5b6d04cc8 │
-│                                                                          │
-│ This report will self-destruct in 24h.                                   │
-│ Keep reports forever: https://reports.cucumber.io/profile                |
-```
 
 ## Project Notes
 
@@ -179,7 +127,8 @@ The reason 2  test cases will fail is because of 2 known Defects:
  *Expected:* The response should contain 2 cities `"Mühlhausen/Thüringen" and "Unstruttal"`
  *Actual:* In the response one 1 city name appears `Mühlhausen`
 
- ## Sample Test Scenario
+
+## Sample Test Scenario
 
 Here's an example of a Gherkin feature file and its corresponding step definition:
 
@@ -204,21 +153,23 @@ Here's an example of a Gherkin feature file and its corresponding step definitio
 **Sample Step Definition (UserSteps.cs):**
 
 ```
-# Verifies that a response is returned when the GET CITIES service makes a request.
-# @param postcode [String] Valid or Invalid German Postcodes
-# @raise [StandardError] If the GET request fails
-When('I request the cities for postcode {string}') do |postcode|
-  complete_uri = "#{@resource_path}/#{postcode}"
-  begin
-    @request = ServiceRequest.setup_request(ENV.fetch('VERIVOX_API_HOST'))
-    @response = @request.get(complete_uri)
-  rescue StandardError => ex
-    raise "Failed to receive GET city response! #{ex.message}"
-  end
-end
-
+	/// <summary>
+	/// Verifies that a response is returned when the GET CITIES service makes a request.
+	/// </summary>
+	/// <param name="postcode">Valid or Invalid German Postcodes</param>
+	/// <task name="GetData"> A async Task that makes the GET service request and returns response</task>
+	[When(@"I request the cities for postcode (.*)")]
+	public async Task WhenIRequestTheCitiesForPostcode(string postcode)
+	{
+		string completeURI = $"{resourcePath}/{postcode.Replace("\"", "")}";
+		try
+		{
+			response = await apiService.GetData(completeURI);
+		}
+		catch (Exception ex)
+		{
+			Assert.Fail($"Failed to receive GET city response! {ex.Message}");
+		}
+	}
 ```
-## Sample CMD execution screens
-![ruby cmd execution](https://github.com/priyankarmitra/api-test-automation-ruby/assets/54986023/43e6a463-b2ed-49bd-9b1f-578d9f66284d)
-
 
