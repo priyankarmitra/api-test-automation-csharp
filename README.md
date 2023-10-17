@@ -116,7 +116,8 @@ The reason 2  test cases will fail is because of 2 known Defects:
  ### Defect 2:
  
  Some postcodes return only one city, but the expectation is to retrieve multiple cities.
- Ex: *Sollstedter Weg 1B, 99974 Unstruttal* and *Güldene Ecke 6, 99974 Mühlhausen/Thüringen*
+ Ex: 
+ *Sollstedter Weg 1B, 99974 Unstruttal* and *Güldene Ecke 6, 99974 Mühlhausen/Thüringen*
  *Gersdorf 97, 01816 Bahretal* and *Am Tannenbusch 5, 01816 Bad Gottleuba-Berggießhübel*
 
  
