@@ -94,8 +94,8 @@ I have used Visual Studio 2022 IDE to develop the code in C#
 
 ## Project Notes
 
-- There are **2 scenarios** and **14 test cases**
-- When you run the test only **12 test cases** will **PASS** and **2  test cases** will **FAIL**
+- There are **2 scenarios** and **16 test cases**
+- When you run the test only **14 test cases** will **PASS** and **2  test cases** will **FAIL**
 
 The reason 2  test cases will fail is because of 2 known Defects:
 
@@ -170,6 +170,6 @@ Here's an example of a Gherkin feature file and its corresponding step definitio
 		{
 			Assert.Fail($"Failed to receive GET city response! {ex.Message}");
 		}
-
+	}
 ```
 

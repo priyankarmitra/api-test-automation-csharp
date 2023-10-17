@@ -14,16 +14,17 @@ Feature: Find the cities and streets for a given postcode
     And The response <HttpStatus> status code should match
 
     Examples:
-      | Endpoint               | Postcode      | CityList                                        | HttpStatus |
-      | /geo/latestv2/cities   | 10409         | Berlin                                          | 200        |
-      | /geo/latestv2/cities   | 77716         | Fischerbach, Haslach im Kinzigtal, Hofstetten   | 200        |
-      | /geo/latestv2/cities   | 99974         | Mühlhausen, Unstruttal                          | 200        |
-      | /geo/latestv2/cities   | 22333         |                                                 | 404        |
-      | /geo/INVALID/cities    | 10585         |                                                 | 404        |
-      | /geo/latestv2/cities   | 117863        |                                                 | 404        |
-      | /geo/latestv2/cities   | 0             |                                                 | 404        |
-      | /geo/latestv2/cities   | NE3$12        |                                                 | 404        |
-
+      | Endpoint               | Postcode      | CityList                                              | HttpStatus |
+      | /geo/latestv2/cities   | 10409         | Berlin                                                | 200        |
+      | /geo/latestv2/cities   | 07629         | Hermsdorf, Reichenbach, Schleifreisen, St. Gangloff   | 200        |
+      | /geo/latestv2/cities   | 77716         | Fischerbach, Haslach im Kinzigtal, Hofstetten         | 200        |
+      | /geo/latestv2/cities   | 99974         | MÃ¼hlhausen, Unstruttal                                | 200        |
+      | /geo/latestv2/cities   | 22333         |                                                       | 404        |
+      | /geo/INVALID/cities    | 10585         |                                                       | 404        |
+      | /geo/latestv2/cities   | 117863        |                                                       | 404        |
+      | /geo/latestv2/cities   | 0             |                                                       | 404        |
+      | /geo/latestv2/cities   | NE3$12        |                                                       | 404        |
+      | /geo/latestv2/cities   | @#@##@        |                                                       | 404        |
     
    @automated @scenario2
    Scenario Outline: Find the streets for a given postcode and city
