@@ -110,6 +110,7 @@ The reason 2  test cases will fail is because of 2 known Defects:
  2. Make another request to cities '/geo/latestv2/cities' API for postcode 60306
  
  *Expected:* The first response should contain the city name as `Frankfurt an der Oder` and the second response should contain the city name `Frankfurt` or `Frankfurt am Main`
+ 
  *Actual:* In both the responses city name appears as `Frankfurt`
 
  ### Defect 2:
@@ -125,6 +126,7 @@ The reason 2  test cases will fail is because of 2 known Defects:
  2. Make another request to cities '/geo/latestv2/cities' API for postcode 60306
  
  *Expected:* The response should contain 2 cities `"Mühlhausen/Thüringen" and "Unstruttal"`
+ 
  *Actual:* In the response one 1 city name appears `Mühlhausen`
 
 
