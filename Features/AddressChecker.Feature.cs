@@ -80,13 +80,15 @@ namespace VerivoxTestApiProject.Features
         [NUnit.Framework.CategoryAttribute("automated")]
         [NUnit.Framework.CategoryAttribute("scenario1")]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "10409", "Berlin", "200", null)]
+        [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "07629", "Hermsdorf, Reichenbach, Schleifreisen, St. Gangloff", "200", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "77716", "Fischerbach, Haslach im Kinzigtal, Hofstetten", "200", null)]
-        [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "99974", "M�hlhausen, Unstruttal", "200", null)]
+        [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "99974", "Mühlhausen, Unstruttal", "200", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "22333", "", "404", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/INVALID/cities", "10585", "", "404", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "117863", "", "404", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "0", "", "404", null)]
         [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "NE3$12", "", "404", null)]
+        [NUnit.Framework.TestCaseAttribute("/geo/latestv2/cities", "@#@##@", "", "404", null)]
         public virtual void FindTheCitiesForAGivenPostcode(string endpoint, string postcode, string cityList, string httpStatus, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -169,7 +171,7 @@ namespace VerivoxTestApiProject.Features
             argumentsOfScenario.Add("NoOfStreets", noOfStreets);
             argumentsOfScenario.Add("HttpStatus", httpStatus);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find the streets for a given postcode and city", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 29
+#line 30
    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -189,22 +191,22 @@ namespace VerivoxTestApiProject.Features
             else
             {
                 this.ScenarioStart();
-#line 30
+#line 31
     testRunner.Given(string.Format("the address checking service endpoint: \"{0}\"", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 32
     testRunner.When(string.Format("I request the streets for \"{0}\" with postcode \"{1}\"", cityList, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 33
     testRunner.Then(string.Format("I should receive a response with a list of streets for \"{0}\"", cityList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 34
     testRunner.And(string.Format("The response should contain {0} streets", noOfStreets), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 35
     testRunner.And("The street names with special characters and dashes displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 36
     testRunner.And(string.Format("The response {0} status code should match", httpStatus), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
