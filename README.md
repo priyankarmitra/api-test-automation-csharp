@@ -24,7 +24,7 @@ VerivoxTestApiProject/
 │   └── TestData.cs							# Static Test Data for testing
 │
 ├── TestResults
-│   └── File6.txt
+│   └── TestReport.html                                               # Test Report generated in HTML
 │
 ├── Readme.md								# Project Notes & Documentation
 │
