@@ -49,7 +49,7 @@ I have used Visual Studio 2022 IDE to develop the code in C#
 	From Command line:
 
 	```
-	dotnet build VerivoxTestApiProject.sln
+	dotnet build
 	```
 
 ### 3. Install the following packages in the project directory. 
