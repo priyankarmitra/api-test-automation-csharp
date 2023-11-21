@@ -1,97 +1,186 @@
+ Test REST API Services using C#, SpecFlow (Gherkin), NUnit and Generate HTML Reports
 
-# Welcome to the Cinemo trial day!
+This repository provides a framework and example code for testing RESTful API services using C#, NUnit and SpecFlow (Gherkin). 
+The tests are designed to ensure the functionality of REST APIs and generate HTML reports to provide clear and organized test results.
 
-## Starting the server
-Open a terminal and run `python3 webserver.py` from the project directory
+### Project Structure
 
-This will create a webserver listening on [http://127.0.0.1:5000](http:127.0.0.1:5000)
+```
+VerivoxTestApiProject/
+│
+├── Features
+│   └── AddressChecker.feature				# Test scenarios to find the cities and streets for a given postcode
+│
+├── Services
+│   └── ApiServices.cs						# API Service class
+│
+├── StepDefinitions
+│   └── AddressCheckerStepDefinitions.cs	# Step Definitions for Address Checker API
+│
+├── Support
+│   └── JsonBuilder.cs					    # Class to perform Json operations
+│
+├── TestData
+│   └── TestData.cs							# Static Test Data for testing
+│
+├── TestResults
+│   └── TestResults.html                                               # Test Report generated in HTML
+│
+├── Readme.md								# Project Notes & Documentation
+│
+└── ImplicitUsings.cs						# Declaring the usings libraries globally (Net 6.0+ support)
+```
 
-## Usage
-* Once you navigate to the url click sign up and enter in your credentials.
-* After sign up you can log in with those credentials.
-* Logging in will display a list of registered users.
-* The only action you have available is to delete users.
+## Prerequisites
 
-## Task 1 of 2
-Use a Selenium Webdriver (Python is preferable) to automate the use cases below. Ensure that you validate the use case properly.
+Before getting started, make sure you have the following prerequisites installed:
 
-### User story 1:
-`As an unregistered user, I would like to register as a new account.`
-> **Acceptance criteria:** 
-> * A new user is registered and is stored in the database with the given credentials. 
-> * Each new user will receive an _id_ which is unique to that user
->> <br/> 
+- **.NET Core**: Ensure that you have the .NET Core framework installed on your machine. I have used **Framework: .NET 6.0.23** which supports ImplicitUsings.
+- **Cucumber for .NET (SpecFlow)**: Install SpecFlow to write and execute Gherkin-based scenarios.
 
-### User story 2:
+I have used Visual Studio 2022 IDE to develop the code in C#
 
-`As a registered user, I want to login to the system using the credentials that I registered with.`
->**Acceptance criteria:**
->* A registered user is able to login with the registration credentials succesfully. 
->* Once logged in, the user list screen is displayed.
->> <br/> 
+## Getting Started
 
-### User story 3: 
-`As a logged in user, I want to be able to delete other users from the system`
->**Acceptance criteria:**
->* From the user list screen, clicking the delete button will delete a user from the list.
->* The list is auto updated and the user is no longer visible
->* The deleted user can no longer log in.
->> <br/> 
+### 1. Open the project
 
-**Task 2:**
+### 2. Build the project to ensure all necessary dependencies are downloaded. 
 
-There is an API available as well which should also be tested.
+	From Command line:
 
->_/login_ **(POST)**
->
->|parameter|type|
->|--|--|
->|email|string|
->|password|string|
->* content-type: form-data
->* Reponse: (one of the following)
->>* `User with that email already exists`
->>* `User signed up successfully! <br> <a href= />Log in</a>`
->> <br/> 
-> <br/> 
+	```
+	dotnet build
+	```
 
->_/usersapi_ **(GET)**
->* Response:
-    JSON object array with registered users
->   ```
->   [
->      {
->         "email": string
->         "id": int
->      "password": string
->      },...
->   ]
->   ```
->   <br/> 
+### 3. Install the following packages in the project directory. 
 
->_/delete/**{id}**_ **(POST)**
->* content-type:: NA
->* Reponse:JSON object: (one of the following)
->
->   ```
->   {
->        "success": true
->   }
->   or
->   {
->        "error": "No user with that id",
->        "success": false
->   }
->   ```
->   <br/> 
+	You can also use the .NET CLI to restore NuGet packages like `dotnet restore`
 
-#### _*Notes*_:
+	```
+	> FluentAssertions                   6.2.0       6.2.0
+	> Microsoft.NET.Test.Sdk             17.0.0      17.0.0
+	> nunit                              3.13.2      3.13.2
+	> NUnit.Console                      3.16.3      3.16.3
+	> NUnit3TestAdapter                  4.5.0       4.5.0
+	> ReportGenerator                    5.1.26      5.1.26
+	> RestSharp                          110.2.0     110.2.0
+	> Shouldly                           4.2.1       4.2.1
+	> SpecFlow.NUnit                     3.9.40      3.9.40
+	> SpecFlow.Plus.LivingDocPlugin      3.9.57      3.9.57
+	```
 
-* Some defects or bad coding practices are there by design and others are there because I wrote this on a lazy Sunday afternoon.
-* You may not have enough time to do all of it. If that's the case, make sure you have at least some examples of both the UI automation as well as the api testing for both positive and negative test cases
-* Finally, you'll present your solution to the interview panel at the end.
-* Use the internet as much as you like :)
+ ### 4. Run your tests using the test runner in your IDE or by executing one of the following commands in *Command prompt / Terminal* as per your requirement:
 
-Good luck!
+	```
+	dotnet test
 
-Shamir 
+
+	or
+
+	dotnet test VerivoxTestApiProject.csproj --filter Category=automated
+
+	or
+
+	dotnet test VerivoxTestApiProject.csproj --filter Category=scenario1
+	```
+### 5. Generate HTML report using the following command
+
+	```
+	dotnet test <pathToProjectDll>\VerivoxTestApiProject.dll --logger html
+	```
+
+*The reports are generated in the **TestResults** directory*
+
+
+## Project Notes
+
+- There are **2 scenarios** and **16 test cases**
+- When you run the test only **14 test cases** will **PASS** and **2  test cases** will **FAIL**
+
+The reason 2  test cases will fail is because of 2 known Defects:
+
+ ### Defect 1:
+
+ Some city names with spaces and '/' do not appear in the response correctly, only the first word is shown, causing truncation.
+
+**Ex:** *77716, Haslach im Kinzigtal* and *99974 Mühlhausen/Thüringen*
+
+ **Steps To Reproduce**
+
+ 1. Make a request to cities '/geo/latestv2/cities' API for postcode 15230
+ 2. Make another request to cities '/geo/latestv2/cities' API for postcode 60306
+
+ *Expected:* The first response should contain the city name as `Frankfurt an der Oder` and the second response should contain the city name `Frankfurt` or `Frankfurt am Main`
+
+ *Actual:* In both the responses city name appears as `Frankfurt`
+
+ ### Defect 2:
+
+ Some postcodes return only one city, but the expectation is to retrieve multiple cities.
+
+**Ex:**
+*Sollstedter Weg 1B, 99974 Unstruttal* and *Güldene Ecke 6, 99974 Mühlhausen/Thüringen*
+
+*Gersdorf 97, 01816 Bahretal* and *Am Tannenbusch 5, 01816 Bad Gottleuba-Berggießhübel*
+
+
+ **Steps To Reproduce**
+
+ 1. Make a request to cities '/geo/latestv2/cities' API for postcode 99974
+ 2. Make another request to cities '/geo/latestv2/cities' API for postcode 60306
+
+ *Expected:* The first response should contain 2 cities `"Mühlhausen/Thüringen" and "Unstruttal"`
+The second response should contain 2 cities `"Bad Gottleuba-Berggießhübel" and "Bahretal"`
+
+ *Actual:* In the first response 1 city name appears `Mühlhausen` and in the second response also 1 city name appears i.e. `"Bad Gottleuba-Berggießhübel"`
+
+
+## Sample Test Scenario
+
+Here's an example of a Gherkin feature file and its corresponding step definition:
+
+**Sample Feature File (user.feature):**
+
+```gherkin
+  @automated @scenario1
+  Scenario Outline: Find the cities for a given postcode
+    Given the address checking service endpoint: "<Endpoint>"
+    When I request the cities for postcode "<Postcode>"
+    Then I should receive a response with "<CityList>"
+    And No JSON data is returned for HTTP error status
+    And The response <HttpStatus> status code should match
+    Examples:
+      | Endpoint               | Postcode      | CityList                                        | HttpStatus |
+      | /geo/latestv2/cities   | 10409         | Berlin                                          | 200        |
+      | /geo/latestv2/cities   | 77716         | Fischerbach, Haslach im Kinzigtal, Hofstetten   | 200        |
+```
+
+**Sample Step Definition (UserSteps.cs):**
+
+```
+	/// <summary>
+	/// Verifies that a response is returned when the GET CITIES service makes a request.
+	/// </summary>
+	/// <param name="postcode">Valid or Invalid German Postcodes</param>
+	/// <task name="GetData"> A async Task that makes the GET service request and returns response</task>
+	[When(@"I request the cities for postcode (.*)")]
+	public async Task WhenIRequestTheCitiesForPostcode(string postcode)
+	{
+		string completeURI = $"{resourcePath}/{postcode.Replace("\"", "")}";
+		try
+		{
+			response = await apiService.GetData(completeURI);
+		}
+		catch (Exception ex)
+		{
+			Assert.Fail($"Failed to receive GET city response! {ex.Message}");
+		}
+	}
+```
+
+## Sample CMD Execution
+![image](https://github.com/priyankarmitra/api-test-automation-csharp/assets/54986023/9f8abf5c-fab5-4c3c-af09-bca70159452b)
+
+
+## Sample Test Report
+![image](https://github.com/priyankarmitra/api-test-automation-csharp/assets/54986023/211fc8db-d235-4b81-9100-9e830b710875)
