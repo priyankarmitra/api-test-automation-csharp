@@ -20,7 +20,7 @@ jobs:
   steps:
   - task: OpenAICodeReviewTask@1
     inputs:
-      api_key: $(OpenAI_ApiKey)
+      api_key: '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'
       ai_model: 'gpt-3.5-turbo'
       bugs: true
       performance: true
