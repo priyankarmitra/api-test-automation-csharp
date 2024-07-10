@@ -1,4 +1,4 @@
- Test REST API Services using C#, SpecFlow (Gherkin), NUnit and Generate HTML Reports
+Test REST API Services using C#, SpecFlow (Gherkin), NUnit and Generate HTML Reports
 
 This repository provides a framework and example code for testing RESTful API services using C#, NUnit and SpecFlow (Gherkin). 
 The tests are designed to ensure the functionality of REST APIs and generate HTML reports to provide clear and organized test results.
