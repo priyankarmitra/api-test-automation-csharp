@@ -4,16 +4,27 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+  branches:
+    exclude:
+      - '*'
 
-pool:
-  vmImage: ubuntu-latest
+pr:
+  branches:
+    include:
+      - '*'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- job: CodeReview
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - task: OpenAICodeReviewTask@1
+    inputs:
+      api_key: $(OpenAI_ApiKey)
+      ai_model: 'gpt-3.5-turbo'
+      bugs: true
+      performance: true
+      best_practices: true
+      file_extensions: 'js,ts,css,html'
+      file_excludes: 'file1.js,file2.py,secret.txt'
+      additional_prompts: 'Fix variable naming, Ensure consistent indentation, Review error handling approach'`
